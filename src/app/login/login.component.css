@@ -1,0 +1,56 @@
+#topic{
+    letter-spacing: 4px;
+    font-weight: lighter;
+    font-size: 30px;
+    line-height: normal ;
+      
+}
+
+body{
+    background: #f7f9fa;
+    overflow-y: scroll;
+}
+.outer{
+    height: 900px;
+    display: flex;
+    background-color: aliceblue;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-div{
+    margin-top: 80px;
+}
+
+.title-div h1{
+    font-size: 60px;
+    font-weight: 900;
+}
+
+.card{
+    padding: 15px;
+    width: 400px;
+
+    /* box-shadow: 5px 5px 5px 5px #8a898950; */
+    box-shadow: 0 0 8px rgba(168, 168, 168, 0.911);
+    border-radius: 18px;
+    transition: transform 0.3s ease-in-out;
+}
+.card:hover{
+  border: 1px solid rgb(0, 174, 255);
+  box-shadow: 0px 2px 12px 12px rgba(60, 89, 255, 0.171);
+  transition: transform 0.3s ease-in-out;
+  transform: scale(1.2);
+
+}
+
+
+
+#createAcBtn{
+    display: block;
+    margin: 0 auto;
+    margin-top: 5px;
+}
+
+
+

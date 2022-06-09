@@ -1,0 +1,127 @@
+<div class="facebook">
+  <div class="outer">
+    <div class="container">
+     
+      <div class="row">
+       
+        <div class="col title-div">
+          <div>
+            <h1 class="text-primary" >facebook</h1>
+            <p id="topic">Facebook helps you connect and share with the people in your life.</p>
+          </div>
+        </div>
+       
+        <div class="col-sm-5">
+          <div class="card">
+            <div>
+              <form [formGroup]="loginForm" (ngSubmit)="loginValidate()">
+                <input
+                  id="username"
+                  formControlName="username"
+                  class="form-control"
+                  type="text"
+                  placeholder="Email or Phone Number"
+                  
+                />
+                
+                <br />
+                <input
+                  id="password"
+                  formControlName="password"
+                  class="form-control"
+                  type="password"
+                  placeholder="Password"
+                  
+                />
+                <br /><button
+                  
+                  type="submit"
+                  class="btn btn-primary btn-lg"
+                  style="width: 100%"
+                >
+                  Log In
+                </button>
+                <!-- <hr id="hr1" /> -->
+                <p
+                  class="text-center my-3"
+                  style="font-size: 14px"
+                >
+                  <a [routerLink]="['/forgotPassword']">Forgot Password?</a>
+                </p>
+              </form>
+            </div>
+            <hr id="hr2" />
+            <a [routerLink]="['/createAccount']" id="createAcBtn" class="btn btn-success btn-lg">
+              Create New Account
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid bg-white pl-0 pr-0">
+  <footer class="p-2">
+    <div class="container">
+      <div class="row ">
+        <div class="col-sm-12">
+          <ul class="list-inline">
+            <li class="list-inline-item">English (US)</li>
+            <li class="list-inline-item">ଓଡ଼ିଆ</li>
+            <li class="list-inline-item">हिन्दी</li>
+            <li class="list-inline-item">తెలుగు</li>
+            <li class="list-inline-item">தமிழ்</li>
+            <li class="list-inline-item"> Português (Brasil) </li>
+            <li class="list-inline-item"> Italiano </li>
+            <li class="list-inline-item"> 한국어 </li>
+            <li class="list-inline-item"> Deutsch </li>
+            <li class="list-inline-item"> हिन्दी </li>
+            <li class="list-inline-item"> 日本語 </li>
+            <li class="list-inline-item">
+              <a href="#" class="btn-secondary btn-add-language">
+                <i class="fas fa-plus fa-1x text-white"></i>
+              </a>
+            </li>
+          </ul>
+          <hr>
+          <ul class="list-inline">
+            <li class="list-inline-item"> Sign Up </li>
+            <li class="list-inline-item"> Log In </li>
+            <li class="list-inline-item"> Messenger </li>
+            <li class="list-inline-item"> Facebook Lite </li>
+            <li class="list-inline-item"> Watch </li>
+            <li class="list-inline-item"> People </li>
+            <li class="list-inline-item"> Profiles </li>
+            <li class="list-inline-item"> Pages </li>
+            <li class="list-inline-item"> Pages Categories </li>
+            <li class="list-inline-item"> Events </li>
+            <li class="list-inline-item"> Places </li>
+            <li class="list-inline-item"> Games </li>
+            <li class="list-inline-item"> Locations </li>
+            <li class="list-inline-item"> Marketplace </li>
+            <li class="list-inline-item"> Groups </li>
+            <li class="list-inline-item"> Instagram </li>
+            <li class="list-inline-item"> Local </li>
+            <li class="list-inline-item"> Fundraisers </li>
+            <li class="list-inline-item"> Services </li>
+            <li class="list-inline-item"> About </li>
+            <li class="list-inline-item"> Create Ad </li>
+            <li class="list-inline-item"> Create Page </li>
+            <li class="list-inline-item"> Developers </li>
+            <li class="list-inline-item"> Careers </li>
+            <li class="list-inline-item"> Privacy </li>
+            <li class="list-inline-item"> Cookies </li>
+            <li class="list-inline-item"> Cookies </li>
+            <li class="list-inline-item"> Ad Choices <i class="fas fa-ad"></i> </li>
+            <li class="list-inline-item"> Terms </li>
+            <li class="list-inline-item"> Account Security </li>
+            <li class="list-inline-item"> Login Help </li>      
+            <li class="list-inline-item"> Help </li>
+          </ul>            
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+

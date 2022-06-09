@@ -1,0 +1,206 @@
+
+
+<section class="vh-200 gradient-custom bg-secondary">
+    <div class="container py-5 ">
+      <div class="row justify-content-center align-items-center h-100">
+        <div class="col-12 col-lg-9 col-xl-7">
+          <div class="card shadow-4-strong card-registration" style="border-radius: 15px;">
+            <div class="card-body p-4 p-md-5">
+              <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 text-center text-primary" style="font-size:xx-large;font-weight:900;">FACEBOOK </h3>
+              <form
+          [formGroup]="registrationForm"
+          (ngSubmit)="postData()"
+          class=""
+        >
+  
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+  
+                    <div class="form-outline">
+                      <input type="text" id="firstname"
+                      formControlName="firstname" 
+                      class="form-control form-control-lg" 
+                      placeholder="First Name"/>
+                      <span
+                *ngIf="
+                  registrationForm.get('firstname')?.invalid &&
+                  registrationForm.get('firstname')?.dirty
+                "
+                style="color: red"
+                >Only string allowed</span
+              >
+                      <!-- <label class="form-label" for="firstName">First Name</label> -->
+                    </div>
+  
+                  </div>
+                  <div class="col-md-6 mb-4">
+  
+                    <div class="form-outline">
+                      <input type="text" id="lastName" 
+                      formControlName="lastname" 
+                      class="form-control form-control-lg"
+                      placeholder="Last Name"
+                       />
+                       <span
+                *ngIf="
+                  registrationForm.get('lastname')?.invalid &&
+                  registrationForm.get('lastname')?.dirty
+                "
+                style="color: red"
+                >Only string allowed</span
+              >
+                      <!-- <label class="form-label" for="lastName">Last Name</label> -->
+                    </div>
+  
+                  </div>
+                </div>
+  
+                <div class="row">
+                  <div class="col-md-6 mb-4 d-flex align-items-center">
+  
+                    <div class="form-outline datepicker w-100">
+                      <input type="text" 
+                      class="form-control form-control-lg"
+                       id="birthdayDate"
+                       formControlName="dob" 
+                       placeholder="Birthday(yyyy-mm-dd)"/>
+                      <!-- <label for="birthdayDate" class="form-label">Birthday</label> -->
+                    </div>
+  
+                  </div>
+                  <div class="col-md-6 mb-4">
+  
+                    <h6 class="mb-2 pb-1">Gender: </h6>
+  
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" formControlName="gender" type="radio" name="gender" id="femaleGender"
+                        value="female" checked />
+                      <label class="form-check-label" for="femaleGender">Female</label>
+                    </div>
+  
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" formControlName="gender" type="radio" name="gender" id="maleGender"
+                        value="male" />
+                      <label class="form-check-label" for="maleGender">Male</label>
+                    </div>
+  
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" formControlName="gender" type="radio" name="gender" id="otherGender"
+                        value="other" />
+                      <label class="form-check-label" for="otherGender">Other</label>
+                    </div>
+  
+                  </div>
+                </div>
+  
+                <div class="row">
+                  <div class="col-md-6 mb-4 pb-2">
+  
+                    <div class="form-outline">
+                      <input type="email" id="emails" 
+                      formControlName="email"
+                      placeholder="Email"
+                       class="form-control form-control-lg" />
+                       <span
+                *ngIf="
+                  registrationForm.get('email')?.invalid &&
+                  registrationForm.get('email')?.dirty
+                "
+                style="color: red"
+                >Invalid Email</span
+              >
+                      <!-- <label class="form-label" for="emailAddress">Email</label> -->
+                    </div>
+  
+                  </div>
+                  <div class="col-md-6 mb-4 pb-2">
+  
+                    <div class="form-outline">
+                        <input
+                        type="text"
+                        class="form-control  form-control-lg"
+                        id="mobile"
+                        formControlName="mobile"
+                        placeholder="Mobile Number"
+                      />
+                      <span
+                        *ngIf="
+                          registrationForm.get('mobile')?.invalid &&
+                          registrationForm.get('mobile')?.dirty
+                        "
+                        style="color: red"
+                        >only 10 numbers allowed</span
+                      >
+                      <!-- <label class="form-label" for="phoneNumber">Phone Number</label> -->
+                    </div>
+  
+                  </div>
+                </div>
+  
+                <div class="row">
+                    <div class="col-md-6 mb-4 pb-2">
+  
+                        <div class="form-outline">
+                            <input
+                            type="password"
+                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                            class="form-control  form-control-lg"
+                            id="password"
+                            formControlName="password"
+                            placeholder="Password"
+                          />
+                          <span
+                            *ngIf="
+                              registrationForm.get('password')?.invalid &&
+                              registrationForm.get('password')?.dirty
+                            "
+                            style="color: red"
+                            >Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters</span
+                          >
+                        </div>
+      
+                      </div>
+                      <div class="col-md-6 mb-4 pb-2">
+      
+                        <div class="form-outline">
+                            <input
+                            type="password"
+                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                            class="form-control form-control-lg"
+                            id="password2"
+                            formControlName="password2"
+                            (change)="confirmPassword()"
+                            placeholder="Confirm Password"
+                          />
+                          <span
+                            *ngIf="!registrationForm.valid && registrationForm.get('password2')?.invalid &&
+                            registrationForm.get('password2')?.dirty"
+                            style="color: red"
+                            >Did not match</span
+                          >
+                        </div>
+      
+                      </div>
+                      <div class="col-md-6 mb-4 pb-2" style="width: 40%;">
+                        <span style="font-size:large">Profile Picture</span><br>
+                        <input type="file" class="form-control form-control-lg"
+                        id="password2"
+                        formControlName="ProfilePicture" (change)="uploadPhoto($event)"/>
+                        <span id="pass"></span>
+                        </div>
+                </div>
+  
+                <div class="text-center d-grid">
+                    <button type="submit" [disabled]="!registrationForm.valid" class="btn btn-primary">REGISTER</button>
+                </div>
+  
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  
